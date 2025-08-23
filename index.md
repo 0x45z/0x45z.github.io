@@ -12,15 +12,7 @@ There should be whitespace between paragraphs. We recommend including a README, 
 
 * * *
 
-# Cyber Security Projects
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-* * *
-
-## Python Projects
+# Cybersecurity Projects
 *   Item foo
 *   Item bar
 *   Item baz
