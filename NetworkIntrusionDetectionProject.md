@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Network Intrusion Detection with Microsoft Azure and Open Source Tools"
 permalink: /projects/networkintrusiondetection
 ---
