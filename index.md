@@ -13,7 +13,7 @@ There should be whitespace between paragraphs. We recommend including a README, 
 * * *
 
 # Cybersecurity Projects
-*   [Network Intrusion Detection with Microsoft Azure, Suricata (IDS), and Elastic Stack (SIEM)](./projects/NetworkIntrusionDetectionProject.md)
+*   [Azure-based Threat Detection with Suricata IDS and Elastic Stack Integration](./projects/NetworkIntrusionDetectionProject.md)
 *   Item bar
 *   Item baz
 *   Item zip
