@@ -2,8 +2,6 @@
 layout: default
 ---
 
-<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=810637" style='border:none;'></iframe>
-
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
 [Link to another page](./NetworkIntrusionDetectionProject.md).
@@ -140,3 +138,6 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
+
+<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=810637" style='border:none;'></iframe>
+
