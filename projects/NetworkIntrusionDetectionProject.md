@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Azure-based Threat Detection with Suricata IDS and Elastic Stack Integration"
+title: "Azure-based Threat Detection with Suricata and Elastic Stack"
 permalink: /projects/networkintrusiondetection
 ---
-# Azure-based Threat Detection with Suricata IDS and Elastic Stack Integration
+# Azure-based Threat Detection with Suricata and Elastic Stack
 
 This project demonstrates the process of implementing an IDS (Suricata) and SIEM (Elastic Stack) to analyse the network traffic from an Azure VM. This enables the detection and remediation of cyberattacks or other malicious activity against the Azure VM. Furthermore, the efficacy of this implementation is evaluated and tested using an industry standard penetration testing tool. 
 
