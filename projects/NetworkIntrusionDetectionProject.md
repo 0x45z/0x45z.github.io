@@ -1,18 +1,16 @@
 ---
 layout: default
-title: "Network Intrusion Detection with Microsoft Azure and Open Source Tools"
+title: "Azure-based Threat Detection with Suricata IDS and Elastic Stack Integration"
 permalink: /projects/networkintrusiondetection
 ---
 # Azure-based Threat Detection with Suricata IDS and Elastic Stack Integration
 
-This project demonstrates the process of implementing an IDS (Suricata) and SIEM (Elastic Stack) to analyse the network traffic on an Azure VM. This enables the detection and remediation of cyberattacks or other malicious activity against the Azure VM.  
-
-Furthermore, the efficacy of this implementation is evaluated and tested using an industry standard penetration testing tool. 
+This project demonstrates the process of implementing an IDS (Suricata) and SIEM (Elastic Stack) to analyse the network traffic from an Azure VM. This enables the detection and remediation of cyberattacks or other malicious activity against the Azure VM. Furthermore, the efficacy of this implementation is evaluated and tested using an industry standard penetration testing tool. 
 
 ## Development
 
-Creating the Microsoft Azure virtual machine (VM) to run Ubuntu 22.04 LTS and configured with
-the Network Watcher extension for Linux
+Creating the Microsoft Azure virtual machine (VM) running Ubuntu 22.04 LTS and configured with
+the Network Watcher extension for Linux.
 
 ![Creating VM](/assets/images/project01/1.png)
 
@@ -27,7 +25,7 @@ Connecting to the VM via SSH with the key file and creating a directory to store
 
 ![Making new directory](/assets/images/project01/5.png)
 
-As this Azure VM lacks computational resources, the intrusion detection system (IDS) will be setup on a local VM that will receive packet captures from the network watcher agent on the Azure VM. This also allows viewing the Kibana dashboard to be easier – which would require a work around if on the Azure VM. The open-source tools require fairly large amounts of RAM, which the Azure VM lacks.
+As this Azure VM lacks computational resources, the intrusion detection system (IDS) and security information and event management (SIEM) will be setup on a local VM that will receive packet captures from the network watcher agent on the Azure VM. This also allows viewing the Kibana dashboard to be easier – which would require a work around if on the Azure VM. This is necessary as Suricata and Elastic Stack require fairly large amounts of RAM, which the Azure VM lacks.
 
 Installing Suricata:
 
@@ -95,7 +93,7 @@ For clarity, the below diagram shows the process from capturing network traffic 
 
 ## Evaluation of the Implementation
 
-The intrusion detection system (IDS) developed in this practical experiment monitors the network traffic of a Microsoft Azure virtual machine (VM) through the use of Azure Network Watcher – which provides the ability to capture packets coming to and from the VM. The packet capture file can then be processed by Suricata – an open-source detection engine using signature-based detection. If the signature of a packet matches one in the emerging threats rule set, an alert is raised. Elasticsearch - which is a distributed storage, search, and analytics engine - indexes the alerts raised by Suricata, which are then displayed with charts and graphs using Kibana – creating an easy visualisation of the data. Analysts can then use the 'discover' tab on Kibana to triage the alerts.
+The intrusion detection system (IDS) developed in this practical experiment monitors the network traffic of a Microsoft Azure virtual machine (VM) through the use of Azure Network Watcher – which provides the ability to capture both ingress and egress packets from the VM. The packet capture file can then be processed by Suricata – an open-source detection engine using signature-based detection. If the signature of a packet matches one in the emerging threats rule set, an alert is raised. Elasticsearch - which is a distributed storage, search, and analytics engine - indexes the alerts raised by Suricata, which are then displayed with charts and graphs using Kibana – creating an easy visualisation of the data. Analysts can then use the 'discover' tab on Kibana to triage the alerts.
 
 This IDS/SIEM setup creates a dashboard for a security operations centre (SOC) analyst or network administrator to monitor network traffic and rule violations to determine an appropriate response. Other than the Azure network watcher – used to capture the traffic, this setup uses free and open- source tools, therefore making it an ideal IDS setup for a small company, organisation or individual that wants an IDS/SIEM to monitor their network assets.
 
@@ -108,11 +106,11 @@ Another issue with this IDS setup is that Azure network watcher does not support
 ## Testing the Implementation
 
 In order to practically test the effectiveness of this IDS, a real-world test must be performed. To perform this test, while network watcher packet capture was running, the Azure VM was scanned
-using Nmap - a tool used to enumerate networked services from a different public IP address. The type of scan used was a SYN scan, which is generally considered to be covert and discreet as the full TCP handshake is never completed; this makes them less likely to be detected by an IDS. The “-Pn” flag was also set to ensure host discovery was disabled. The command ran was “sudo nmap -sS -Pn <azure_ip>. After this scan was completed and the Azure network watcher packet capture had finished, the capture file was scanned by Suricata, and the results were displayed on the Kibana dashboard.
+using Nmap - a tool used to enumerate networked services. The type of scan used was a SYN scan, which is generally considered to be covert and discreet as the full TCP handshake is never completed; this makes them less likely to be detected by an IDS. The `-Pn` flag was also set to ensure host discovery was disabled. The command ran was `sudo nmap -sS -Pn <azure_ip>`. After this scan was completed and the Azure network watcher packet capture had finished, the capture file was scanned by Suricata, and the results were displayed on the Kibana dashboard.
 
 ![Results of test](/assets/images/project01/22.png)
 
-The Kibana dashboard displayed multiple detections with the signature: “ET SCAN Potential SSH Scan” on destination port 22. These alerts indicate that the IDS successfully detected the Nmap scan on port 22. In addition to the expected detection of the test scan, other alerts indicated that unauthorised scans also took place, including one from an IP address located in Hangzhou, China, with the signatures: “ET 3CORESec Poor Reputation IP” and “ET SCAN Potential SSH Scan”.
+The Kibana dashboard displayed multiple detections with the signature: `ET SCAN Potential SSH Scan` on destination port 22. These alerts indicate that the IDS successfully detected the Nmap scan on port 22. In addition to the expected detection of the test scan, other alerts indicated that unauthorised scans also took place, including one from an IP address located in Hangzhou, China, with the signatures: `ET 3CORESec Poor Reputation IP` and `ET SCAN Potential SSH Scan`.
 
 ![Scans](/assets/images/project01/23.png)
 
