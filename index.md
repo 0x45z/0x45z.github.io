@@ -14,7 +14,7 @@ There should be whitespace between paragraphs. We recommend including a README, 
 
 # Cybersecurity Projects
 *   [Azure-based Threat Detection with Suricata and Elastic Stack](./projects/NetworkIntrusionDetectionProject.md)
-*   Item bar
+*   [Building Cloud-Based SOC with Microsoft Sentinel](./projects/SentinelHoneypot.md)
 *   Item baz
 *   Item zip
 
