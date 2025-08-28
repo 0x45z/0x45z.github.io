@@ -23,5 +23,5 @@ layout: default
 
 * * *
 
-<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=810637" style='border:none;'></iframe>
+<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=810637" style='border:none;' width="100%"></iframe>
 
