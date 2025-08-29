@@ -10,7 +10,9 @@ This project involves the development and deployment of a cloud-based Security O
 
 ![Cloud SOC Diagram](/assets/images/project02/Cloud_SOC_Diagram.png)
 
-This project enables aspiring and junior analysts to understand how Microsoft Sentinel works, practice using its interface and KQL queries, and practice triaging and remediating cyberattacks in a safe environment.poi
+This project enables aspiring and junior analysts to understand how Microsoft Sentinel works, practice using its interface and KQL queries, and practice triaging and remediating cyberattacks in a safe environment.
+
+The development process for this project can be found here [here.](Link here)
 
 ## Demonstration with Simulated Cyberattacks
 
@@ -86,7 +88,7 @@ Details on `SSH Brute Force Success - Linux` alert:
 
 ## Demonstration with Real Cyberattacks
 
-The Windows and Linux VM were left running for approximately 24 hours.  As a result, 252 alerts were triggered from brute force attacks against the RDP and SSH service on the Windows and Linux VM respectively.
+The Windows and Linux VMs were left running for approximately 24 hours. As a result, 252 alerts were triggered from brute force attacks against the RDP and SSH service on the Windows and Linux VM respectively.
 
 ![Alert Dashboard](/assets/images/project02/2.png) 
 
