@@ -15,6 +15,34 @@ This project enables aspiring and junior analysts to understand how Microsoft Se
 
 ## Demonstration with Simulated Cyberattacks
 
+In this section, various brute force attacks will be demonstrated to show the attack and the resulting alert and logs in Microsoft Sentinel.
+
+## Attacking MSSQL
+
+Enumerating the Target with Nmap.
+
+![MSSQL Enum](/assets/images/project02/11.png) 
+
+Conducting a brute force attack against MSSQL with Hydra.
+
+![MSSQL Brute Force](/assets/images/project02/12.png) 
+
+Subsequently an alert is triggered.
+
+![Alert](/assets/images/project02/13.png) 
+
+The alert shows 262 failed authentication attempts - the same as reported by Hydra. 
+
+![Alert](/assets/images/project02/14.png) 
+
+I would demonstrate a successful brute force attack... but I forgot the password for the database...
+(it was a good password)
+
+## Attacking RDP
+
+
+
+
 
 
 
@@ -30,11 +58,11 @@ The attack maps illustrate the attacks by plotting them on a map according to th
 
 ![SSH Attack Map](/assets/images/project02/4.png) 
 
-From this data, it can be seen that (for this specific case) there are a greater number and distribution of attacks against SSH than RDP. However, the attacks against RDP are performed with greater intensity, with the highest number of attempts from a single IP for RDP being 6,600, whereas the highest number of attempts against SSH is only 876.
+From this data, it can be seen that (for this specific case) there are a greater number and distribution of attacks against SSH than RDP. However, the attacks against RDP are performed with greater intensity, with the highest number of attempts from a single IP for RDP being 6,624, whereas the highest number of attempts against SSH is only 876. It is notable that no brute force attempts were made against the exposed MSSQL service.
 
 ## Triaging an Alert
 
-Triaging the most recent alert, it can be seen to be a brute force attempt against RDP from the IP `57[.]129[.]140[.]32`.
+Triaging the most recent alert, it can be seen to be an RDP brute force attempt from the IP `57[.]129[.]140[.]32`.
 
 ![RDP Alert](/assets/images/project02/5.png) 
 
@@ -50,7 +78,7 @@ Despite the large number of brute force attempts, this IP has only been reported
 
 ![IP Reputation](/assets/images/project02/8.png) 
 
-This threat actor is attempting the brute force the accounts `\ADMINISTRATOR` and `\ADMIN only`.
+This threat actor is attempting to brute force the accounts `\ADMINISTRATOR` and `\ADMIN` only.
 
 ![Targets](/assets/images/project02/9.png) 
 
@@ -65,7 +93,7 @@ For this example, I took the time to submit an abuse report to OVHCloud as this 
 
 ![Report](/assets/images/project02/10.png) 
 
-Given the quantity of brute force attacks, however, reporting every single malicious IP in this way would not be feasible. However, sites like AbuseIPDB have APIs to set up automatic reporting.
+Given the quantity of brute force attacks, reporting every single malicious IP in this way would not be feasible. However, sites like AbuseIPDB have APIs to set up automatic reporting.
 
 
 
