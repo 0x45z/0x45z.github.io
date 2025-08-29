@@ -10,12 +10,11 @@ This project involves the development and deployment of a cloud-based Security O
 
 ![Cloud SOC Diagram](/assets/images/project02/Cloud_SOC_Diagram.png)
 
-This project enables aspiring and junior analysts to understand how Microsoft Sentinel works, practice using its interface and KQL queries, and practice triaging and remediating cyberattacks in a safe environment.
-
+This project enables aspiring and junior analysts to understand how Microsoft Sentinel works, practice using its interface and KQL queries, and practice triaging and remediating cyberattacks in a safe environment.poi
 
 ## Demonstration with Simulated Cyberattacks
 
-In this section, various brute force attacks will be demonstrated to show the attack and the resulting alert and logs in Microsoft Sentinel.
+In this section, various brute force attacks are demonstrated to show the attack process and the resulting alerts and logs in Microsoft Sentinel.
 
 ## Attacking MSSQL
 
@@ -27,7 +26,7 @@ Conducting a brute force attack against MSSQL with Hydra.
 
 ![MSSQL Brute Force](/assets/images/project02/12.png) 
 
-Subsequently an alert is triggered.
+Subsequently an alert was triggered.
 
 ![Alert](/assets/images/project02/13.png) 
 
@@ -40,11 +39,50 @@ I would demonstrate a successful brute force attack... but I forgot the password
 
 ## Attacking RDP
 
+Using Metasploit's `rdp_scanner` module to enumerate the domain name.
+
+![Metasploit RDP scan](/assets/images/project02/rdp-info.png) 
+
+When brute forcing the RDP service, the username must be in the format `Domain\Username`.
+Conducting a brute force attack against RDP with Hydra.
+
+![Hydra RDP](/assets/images/project02/15.png) 
+
+The resulting alert can be viewed below.
+
+![RDP Alert](/assets/images/project02/16.png) 
+
+After the above brute force attempt, the correct password was added to the wordlist and the brute force was run again. Unfortunately, Hydra incorrectly classifies a successful RDP authentication as unsuccessful. Therefore, it identifies valid credentials as incorrect. However, checking the alerts, it can be seen that the brute force was successful.
+
+![RDP Success Alert](/assets/images/project02/17.png) 
+
+![RDP Success Alert](/assets/images/project02/18.png) 
 
 
+## Attacking SSH
 
+Conducting a brute force attack against SSH with Hydra.
 
+![SSH Brute Force](/assets/images/project02/19.png) 
 
+The result of this attack is two alerts. One from the EDR and one from the SSH brute force rule.
+
+![EDR Alert](/assets/images/project02/20.png)
+
+![SSH Rule Alert](/assets/images/project02/21.png)
+
+After changing the password list to include the real password and re-running the attack, it is successful. 
+
+Successful SSH brute force in Hydra:
+![Successful SSH Brute](/assets/images/project02/22.png)
+
+Alerts from successful SSH brute force (The order of the alerts does not reflect order of events. The alerts are ordered in the order that the respective query for each event was executed):
+
+![Successful SSH Brute](/assets/images/project02/23.png)
+
+Details on `SSH Brute Force Success - Linux` alert:
+
+![Successful SSH Brute](/assets/images/project02/24.png)
 
 ## Demonstration with Real Cyberattacks
 
