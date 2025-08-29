@@ -12,7 +12,7 @@ This project involves the development and deployment of a cloud-based Security O
 
 This project enables aspiring and junior analysts to understand how Microsoft Sentinel works, practice using its interface and KQL queries, and practice triaging and remediating cyberattacks in a safe environment.
 
-The development process for this project can be found here [here.](Link here)
+The development process for this project can be found [here.](Link here)
 
 This document will showcase the SOC environment through triage and analysis of simulated and real cyberattacks.
 
