@@ -14,6 +14,8 @@ This project enables aspiring and junior analysts to understand how Microsoft Se
 
 The development process for this project can be found here [here.](Link here)
 
+This document will showcase the SOC environment through triage and analysis of simulated and real cyberattacks.
+
 ## Demonstration with Simulated Cyberattacks
 
 In this section, various brute force attacks are demonstrated to show the attack process and the resulting alerts and logs in Microsoft Sentinel.
