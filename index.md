@@ -15,6 +15,7 @@ layout: default
 
 # Certifications
 *   [TryHackMe Security Analyst Level 1 (SAL1)](https://assets.tryhackme.com/certification-certificate/68a4c01eaaa188a6e81d10f4.pdf)
+*   [TryHackMe SOC Level 1 Training Path](https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-UYI8S7VV8E.pdf)
 
 * * *
 
