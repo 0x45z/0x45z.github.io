@@ -7,15 +7,15 @@ layout: default
 # Cybersecurity Projects
 *   [Azure-based Threat Detection with Suricata and Elastic Stack](./projects/NetworkIntrusionDetectionProject.md)
 *   [Building a Cloud-Based SOC with Microsoft Sentinel](./projects/SentinelHoneypot.md)
-*   Item baz
-*   Item zip
+*   [Least Significant Bit (LSB) Steganography Tool](https://github.com/0x45z/Steganography)
+*   [Command & Control Application with GUI](https://github.com/0x45z/Command-and-Control-GUI)
+*   [SHA256 Hash Cracker](https://github.com/0x45z/SHA256-Bruteforce)
 
 * * *
 
 # Certifications
 *   [TryHackMe Security Analyst Level 1 (SAL1)](https://assets.tryhackme.com/certification-certificate/68a4c01eaaa188a6e81d10f4.pdf)
 
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
 * * *
 
 # Education
