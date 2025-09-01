@@ -10,6 +10,7 @@ layout: default
 *   [Least Significant Bit (LSB) Steganography Tool](https://github.com/0x45z/Steganography)
 *   [Command & Control Application with GUI](https://github.com/0x45z/Command-and-Control-GUI)
 *   [SHA256 Hash Cracker](https://github.com/0x45z/SHA256-Bruteforce)
+*   [A Comprehensive Analysis into the Attack Surface of Connected Vehicles](https://arxiv.org/submit/6694866/view)
 
 * * *
 
